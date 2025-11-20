@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF UI  Text';
+}
+
+.array-box {
+    transition: all 0.4s ease;
+}

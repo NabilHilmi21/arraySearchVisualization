@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+
+    <div class="text-center p-4
+                md:p-0">
+        <h1 class="text-5xl font-bold">Searching Visualization</h1>
+        <h3 class="text-lg text-gray-500 mt-1
+                    md:text-xl">A project for Complexity Algorithm Analysis by Nabil & Syahrial</h3>  
+    </div>
+    <div class="bg-white rounded-xl shadow-md w-full p-6 mt-6 inline-block
+                lg:w-5/6
+                xl:w-3/5">
+        <h1 class="text-4xl font-bold">About</h1>
+        <p class="mt-2 text-lg text-gray-500">Situs ini dibuat untuk memvisualisasikan algoritma pencarian. Menggunakan bahasa pemrograman HTML, CSS (Tailwind CSS), JavaScript, dan Python</p>
+    </div>
+
+    <div class="bg-white shadow-md mt-4 w-full rounded-xl flex flex-col p-6 space-y-0
+                lg:w-5/6
+                xl:w-3/5">
+        <h1 class="text-4xl font-bold mb-2">Visualize</h1>     
+        <div class="flex flex-col space-y-2
+                    md:flex-row md:space-x-2 md:space-y-0">
+            <input type="text" name="arrayInput" id="arrayInput" placeholder="420, 67, 69" class="border border-gray-300 rounded-xl p-2">
+            <button id="generateArrayBtn" class="bg-blue-500 text-white rounded-xl px-6 py-2 hover:bg-blue-600 duration-200 ease-in-out">Generate Array</button>
+        </div>
+        <div id="arrayContainer" class="flex flex-wrap justify-center my-2 space-x-2 my-48
+                                        md:space-y-0 md:my-54">
+            <h1 class="text-gray-500">Your array will appear here</h1>
+            <!-- <h1 class="border p-6 arrayBox">67</h1> -->
+        </div>
+        
+        <div class="flex flex-col space-y-2
+                    md:space-y-0">
+            <div class="flex flex-col space-y-2
+                        md:flex-row md:space-x-2 md:space-y-0">
+                <select id="mySelect" class="border p-2 rounded border border-gray-300 rounded-xl p-2">
+                    <option value="">Choose a method</option>
+                    <option value="1">Linear Search</option>
+                    <option value="2">Binary Search</option>
+                    <option value="3">Jump Search</option>
+                </select>
+                <input type="text" name="targetInput" id="targetInput" placeholder="Choose a target" class="border border-gray-300 rounded-xl p-2">
+                <button id="visualizationBtn" class="bg-blue-500 text-white rounded-xl px-6 py-2 hover:bg-blue-600 duration-200 ease-in-out">Search</button>
+            </div>
+            
+            <div id="descriptionContainer">
+                <!-- Description will be added here -->
+
+            </div>
+        </div>
+           
+    </div>
+
+   <div class="bg-white shadow-md mt-4 w-full rounded-xl flex flex-col space-y-3 p-6
+                lg:w-5/6
+                xl:w-3/5">
+        <h1 class="text-4xl font-bold">Show Codes</h1>
+        <div class="flex flex-col space-y-2
+                    md:flex-row md:space-x-2 md:space-y-0">
+            <select id="selectShow" class="border p-2 rounded border border-gray-300 rounded-xl p-2">
+                <option value="">Choose a method</option>
+                <option value="1">Linear Search</option>
+                <option value="2">Binary Search</option>
+                <option value="3">Jump Search</option>
+            </select>
+            <select name="codeLang" id="selectLang" class="border p-2 rounded border border-gray-300 rounded-xl p-2">
+                <option value="">Choose a language</option>
+                <option value="1">JavaScript</option>
+                <option value="2">Python</option>
+                <option value="3">Golang</option>
+                <option value="4">C++</option>
+                <option value="5">C</option>
+            </select>
+            <button id="showCodeBtn" class="bg-blue-500 text-white rounded-xl px-6 py-2 hover:bg-blue-600 duration-200 ease-in-out">Show Code</button>
+        </div>
+        <div id="codeContainer">
+            <!-- Code will be shown here -->
+
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
