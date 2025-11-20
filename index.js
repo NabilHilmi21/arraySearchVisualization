@@ -25,22 +25,29 @@ function generateArr(arrayInput){
 function renderArray(array){
     container.innerHTML = "";
     let i = 0;
+    if (array.length === 0){
+        container.innerHTML = "<p class='text-red-500'>Please enter valid numbers separated by commas.</p>";
+        return;
+    } else if (array.some(isNaN)){
+        container.innerHTML = "<p class='text-red-500'>Please enter valid numbers separated by commas.</p>";
+        return;
+    } else {
+        for (arr of array){
+            let box = document.createElement("div");
+            box.classList.add(
+                "p-4",
+                `array-number-${i}`,
+                "mt-2",
+                "rounded-xl",
+                "border",
+                "text-center",
+                "array-box"
+            )
+            box.textContent = arr;
+            container.appendChild(box);
 
-    for (arr of array){
-        let box = document.createElement("div");
-        box.classList.add(
-            "p-4",
-            `array-number-${i}`,
-            "mt-2",
-            "rounded-xl",
-            "border",
-            "text-center",
-            "array-box"
-        )
-        box.textContent = arr;
-        container.appendChild(box);
-
-        i++;
+            i++;
+        }
     }
 }
 
