@@ -148,9 +148,9 @@ async function visualBinarySearch(array, target){
         let rightBox = document.querySelector(`.array-number-${right}`);
         let midBox = document.querySelector(`.array-number-${mid}`);
 
-        // Overlap rules
+        //warnain
         if (left === right && right === mid){
-            midBox.classList.add("bg-yellow-400"); // mid priority
+            midBox.classList.add("bg-yellow-400"); // prioritasin warnain mid
         }
         else if (left === mid){
             leftBox.classList.add("bg-yellow-400");
@@ -168,7 +168,7 @@ async function visualBinarySearch(array, target){
 
         await sleep(2000);
 
-        // Found → ALWAYS GREEN
+        // ketemu = hijau
         if (array[mid] === target){
             resetColors(array);
             midBox.classList.add("bg-green-400");
@@ -247,9 +247,9 @@ function showCodes(method, lang){
         codeContainer.innerHTML = "<p class='text-red-500'>Please select a valid search method.</p>";
         return;
     } else {
-        // Clear previous code
+        
         codeContainer.innerHTML = "";
-        // Create a box to show code
+      
         let codeBox = document.createElement("div");
         codeBox.classList.add(
             "rounded-xl",
@@ -260,7 +260,7 @@ function showCodes(method, lang){
             "text-white"
         );
         codeContainer.appendChild(codeBox);
-        // Fetch code from appropriate file
+        // fetch file dari folder codes
         let filePath = `codes/method${method}_lang${lang}.txt`;
         fetch(filePath)
             .then(response => {
